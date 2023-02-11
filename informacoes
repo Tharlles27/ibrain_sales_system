@@ -1,0 +1,10 @@
+# Export
+docker-compose exec db pg_dump -U postgres -F t mydb > backup.tar
+
+
+Os dados do banco seral zipados e de acordo com o comando sera jogado no backup.tar
+
+para importar o mesmo
+# Import
+docker-compose exec db pg_restore -U postgres -C -d mydb < backup.tar 
+
